@@ -1,0 +1,8 @@
+global:
+  english: English
+  persian: فارسی
+pages:
+  home: Home
+  projects: Projects
+  interests: Interests
+  contact: Contact
