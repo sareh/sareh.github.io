@@ -1,0 +1,16 @@
+---
+layout: page
+---
+<article class="project">
+  <header class="project-header">
+    <h3 class="project-title">{{ project.title }}</h3>
+  </header>
+  <p class="project-tagline">
+    {{ project.tagline }}
+  </p>
+  <img class="project-image" src="{{ project.image }}" alt="screenshot of {{ project.title }} project">
+  <p class="project-tagline">{{ project.tagline }}</p>
+  {% if project.blog_url %}<a class="button" href="{{ project.blog_url | prepend: site.baseurl }}">Read my blog post</a>{% endif %}
+  {% if project.url %}<a class="button project-url" href="{{ project.url | prepend: site.baseurl }}">{{ project.url_text }}</a>{% endif %}
+  {% if project.github_url %}<a class="button" href="{{ project.github_url }}">View the code on Github</a>{% endif %}
+</article>
