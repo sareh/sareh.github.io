@@ -1,8 +1,12 @@
+service_name: English
+language: en
+text_direction: ltr
 global:
   english: English
   persian: فارسی
 pages:
   home: Home
   projects: Projects
+  blog: Blog
   interests: Interests
   contact: Contact
