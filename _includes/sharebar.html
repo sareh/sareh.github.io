@@ -1,0 +1,13 @@
+<% function share_component(urlToShare, socialMediaButtons) { %>
+  <div class="share share--lightweight  show">
+    <a name="share-tools"></a>
+    <h2 class="share__title share__title--lightweight"><%= vocab.shareTitle %> <a href="..."><%= vocab.aboutSocialMediaLinks %></a></h2>
+    <ul class="share__tools share__tools--lightweight">
+      <%
+        socialMediaButtons.forEach(function (buttonName) {
+          button_component(urlToShare, buttonName);
+        });
+      %>
+    </ul>
+  </div>
+<% } %>
