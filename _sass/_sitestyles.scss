@@ -1,0 +1,29 @@
+:lang(en-GB){
+  quotes:'\2018' '\2019' '\201C' '\201D';
+  font-family: sans-serif;
+}
+:lang(fa){
+  font-family: 'Far.BadrBold', 'Far.Compset', Arial, sans-serif;
+  //Terafik, Traffic, Roya, Nazli, Nazanin, sans, sans-serif;
+  font-size: 1.5em;
+}
+
+$breakpoint: 281px;
+
+@if $english {
+  $breakpoint: 316px;
+}
+
+@if $persian {
+  $breakpoint: 286px;
+}
+
+.nav-element {
+  #{$margin-left}: 10px;
+  #{$padding-right}: 10px;
+  #{$left}: 10px;
+}
+
+@media (max-width: $breakpoint) {
+  ...
+}

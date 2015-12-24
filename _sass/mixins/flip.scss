@@ -1,0 +1,8 @@
+@function flip($left, $right) {
+  @if $direction == 'left' {
+    @return $left;
+  }
+  @if $direction == 'right' {
+    @return $right;
+  }
+}

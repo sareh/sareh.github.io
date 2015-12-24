@@ -1,0 +1,29 @@
+$margin-left: margin-left;
+@if $direction == right {
+  $margin-left: margin-right;
+}
+
+$margin-right: margin-right;
+@if $direction == left {
+  $margin-right: margin-left;
+}
+
+$padding-left: padding-left;
+@if $direction == right {
+  $padding-left: padding-right;
+}
+
+$padding-right: padding-right;
+@if $direction == left {
+  $padding-right: padding-left;
+}
+
+$left: left;
+@if $direction == right {
+  $left: right;
+}
+
+$right: right;
+@if $direction == left {
+  $right: left;
+}

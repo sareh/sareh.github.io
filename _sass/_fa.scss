@@ -1,0 +1,6 @@
+$persian: true;
+$script: 'arabic';
+$direction: 'right';
+@include(mixins/directions);
+@include(_sitestyles);
+@include(mixins/flip);
