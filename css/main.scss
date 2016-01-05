@@ -1,53 +1,265 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# Front matter comment to ensure Jekyll properly reads file.
 ---
-@charset "utf-8";
 
+/* Normalise file */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
-
-// Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 
+/* Colours */
+$blue50:  #E3F2FD;
+$blue100: #BBDEFB;
+$blue200: #90CAF9;
+$blue300: #64B5F6;
+$blue400: #42A5F5;
+$blue500: #2196F3;
+$blue600: #1E88E5;
+$blue700: #1976D2;
+$blue800: #1565C0;
+$blue900: #0D47A1;
+$black:   #000000;
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+$text-color: #2F2F2F;
+
+/* Fonts */
+$en-font-family: Arial, sans-serif;
+$fa-font-family: Arial, sans-serif;
+
+$en-font-size: 1em;
+$en-menu-height: 2.5em;
+$en-menu-font-size: 1.5em;
+$en-menu-letter-spacing: 1px;
+
+$en-site-title-font-size: 3.5em;
+$en-site-title-font-weight: bold;
+
+$en-site-tagline-font-size: 2em;
+
+/* Colours for sections */
+$pale-grey: #FAFAFA;
+$site-title-colour: $blue900;
+$site-tagline-colour: $blue900;
+$title-background-color: #020100;
+$title-background-image: url("/images/7008036-night-london-city-wallpaper.jpg");
+
+/* Imports */
+
+/*!
+ *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+@import "font-awesome/variables";
+@import "font-awesome/mixins";
+@import "font-awesome/path";
+@import "font-awesome/core";
+@import "font-awesome/larger";
+@import "font-awesome/fixed-width";
+@import "font-awesome/list";
+@import "font-awesome/bordered-pulled";
+@import "font-awesome/animated";
+@import "font-awesome/rotated-flipped";
+@import "font-awesome/stacked";
+@import "font-awesome/icons";
+
+// @import "foundation-icons";
+//My Mixins:
+@import "mixins/links";
+
+body {
+  background-color: $pale-grey;
+  color:            $text-color;
+  font-family:      $en-font-family;
+  font-size:        100%;
+  header#site-header {
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    div#site-header-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      transform: translate3d(0px, 0px, 0px);
+      opacity: 1;
+      background: $title-background-color $title-background-image no-repeat center;
+  
+    }
+    
+    nav {
+      .menu-list {
+        list-style: none;
+        height: $en-menu-height;
+        li {
+          display: inline;
+          // @include links($en-menu-font-size, $en-menu-letter-spacing, $blue50, $blue50, $blue500, $blue500);
+          /*a {
+            text-transform: uppercase;
+            font-size: $en-menu-font-size;
+            letter-spacing: $en-menu-letter-spacing;
+            &,
+            &:visited {
+              color: $blue50;
+              text-decoration: none;
+            }
+            &:hover,
+            &:focus {
+              color: $blue500;
+              text-decoration: underline;
+            }
+          }*/
+          button.menu-toggle-button {
+            background-color: transparent;
+            color: $blue50;
+            font-size: $en-menu-font-size;  
+          }
+        } 
+      }
+    }
+    div.title-background {
+      text-align: center;
+      div.site-logo {
+        margin: 0 auto;
+      }
+      div.site-title {
+        text-transform: uppercase;
+        /*font-variant: small-caps;*/
+        font-size: $en-site-title-font-size;
+        font-weight: $en-site-title-font-weight;
+        color: $site-title-colour;
+      }
+      div.site-tagline {
+        text-transform: uppercase;
+        /*font-variant: small-caps;*/
+        font-size: $en-site-tagline-font-size;
+        color: $site-tagline-colour;
+      }  
+    }
+  }
+
+  .social-media-icons {
+    color: $blue900;
+    text-align: center;
+    li {
+      display: inline;
+    }
+  }
+
+  section {
+    max-width: 960px;
+    margin: 2em auto;
+    h2.section-title {
+      text-align: center;
+      font-size: 2em;
+    }
+  }
+
+  section.projects {
+
+  }
+
+  section.contact {
+    text-align: center;
+    ul.contact-links {
+      list-style: none;
+      li {
+        display: inline;
+        @include links($en-font-size, 2px, $blue900, $blue900, $blue900, $blue900);
+        .icon-github {
+          fill: red;
+        }
+        .icon-twitter {
+          fill: blue;
+        }
+        .icon-github,
+        .icon-twitter,
+        .icon-linkedin,
+        .icon-email {
+          height: 50px;
+        }
+      }
+    }
+
+  }
+
+  footer {
+    ul.menu-list {
+      text-align: center;
+      list-style: none;
+      li {
+        display: inline;
+        @include links($en-font-size, 2px, $blue900, $blue900, $blue900, $blue900);
+      }
+/*      li~li { 
+        border-left: 1px solid $blue900;
+      }
+*/
+    }
+    
+    // ul.social-buttons {
+    //   text-align: center;
+    //   list-style: none;
+    //   li {
+    //     display: inline;
+    //     @include links($en-font-size, 2px, $blue900, $blue900, $blue900, $blue900);
+    //     .icon-github {
+    //       max-width: 50px;
+    //       max-height: 50px;
+    //     }
+    //   }
+    // }
+    
+    p#footer-copyright {
+      text-align: center;
+    }
+
+  }
+}

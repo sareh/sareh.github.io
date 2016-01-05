@@ -1,0 +1,21 @@
+- type: github
+  username: sareh
+  url: https://github.com/sareh
+  img: /images/icon-github.svg
+  icon: "fa-github fa-lg"
+
+- type: twitter
+  username: sareh88
+  url: https://twitter.com/sareh88
+  img: /images/icon-twitter.svg
+  icon: fa-twitter
+
+- type: linkedin
+  url: https://www.linkedin.com/in/sarehheidari
+  img: /images/icon-linkedin.svg
+  icon: fa-linkedin
+
+- type: email
+  url: mailto:hello@sareh.co.uk
+  img: /images/icon-email.svg
+  icon: fa-envelope
