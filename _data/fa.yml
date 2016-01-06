@@ -1,0 +1,45 @@
+site_author: "ساره حیدری"
+service_name: Persian
+language: fa
+text_direction: rtl
+global:
+  english: English
+  persian: فارسی
+pages:
+  home: صفحه اصلی
+  projects: پروژه ها
+  blog: وبلاگ
+  interests: موضوعات مورد علاقه
+  contact: تماس
+site_title: "ساره حیدری"
+site_subtitle: "برنامه نویس وبسایت"
+social_media: "شبکه‌های اجتماعی"
+menu: "فهرست"
+menu_items:
+  - name: about
+    link: /fa/about
+    text: درباره من
+  - name: projects
+    link: /fa/projects
+    text: پروژه ها
+  - name: blog
+    link: /fa/blog
+    text: وبلاگ
+  - name: interests
+    link: /fa/interests
+    text: موضوعات مورد علاقه
+  - name: contact
+    link: /fa/contact
+    text: تماس
+  - name: english
+    link: /en
+    text: English
+home: صفحه اصلی
+about: درباره من
+projects: پروژه ها
+blog: وبلاگ
+interests: موضوعات مورد علاقه
+contact: تماس
+site_title: "ساره حیدری"
+site_subtitle: "برنامه نویس وبسایت"
+social_media: "شبکه‌های اجتماعی"

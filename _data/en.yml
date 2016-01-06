@@ -1,0 +1,38 @@
+site_author: "Sareh Heidari"
+service_name: English
+language: en
+text_direction: ltr
+global:
+  english: English
+  persian: فارسی
+pages:
+  home: Home
+  projects: Projects
+  blog: Blog
+  interests: Interests
+  contact: Contact
+site_title: "Sareh Heidari"
+site_subtitle: "Web Developer"
+menu: "Menu"
+menu_items:
+- link: /en/about
+  text: About Me
+- link: /en/projects
+  text: Projects
+- link: /en/blog
+  text: Blog
+- link: /en/interests
+  text: Interests
+- link: /en/contact
+  text: Contact
+- link: /fa
+  text: فارسی
+home: Home
+about: "About Me"
+projects: Projects
+blog: Blog
+interests: Interests
+contact: Contact
+site_title: "Sareh Heidari"
+site_subtitle: "Web Developer"
+social_media: "Social Media"
