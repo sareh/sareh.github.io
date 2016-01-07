@@ -1,0 +1,31 @@
+@mixin menu-links($font-size, $letter-spacing, $color, $page-color) {
+  a{
+    text-transform: uppercase;
+    font-size: $font-size;
+    letter-spacing: $letter-spacing;
+    font-weight: bold;
+    margin: 0.2em 0.1em;
+    padding: 0.2em 0.4em;
+    text-decoration: none;
+    line-height: 3;
+    &,
+    &:visited {
+      color: $color;
+      border: 0.2em solid $color;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      color: $page-color;
+      background-color: lighten($color, 20%);
+      border: 0.2em solid lighten($color, 20%);
+    }
+    // @if($has-underlines) {
+    //   &:hover,
+    //   &:focus,
+    //   &:active {
+    //     text-decoration: underline;  
+    //   }
+    // }
+  }
+}

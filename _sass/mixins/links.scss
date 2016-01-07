@@ -1,0 +1,27 @@
+@mixin links($font-size, $letter-spacing, $color, $color-visited, $color-hover-focus, $color-active, $has-underlines) {
+  a{
+    text-transform: uppercase;
+    font-size: $font-size;
+    letter-spacing: $letter-spacing;
+    color: $color;
+    text-decoration: none;
+    &:visited {
+      color: $color-visited;
+      text-decoration: none;
+    }
+    &:hover,
+    &:focus {
+      color: $color-hover-focus;
+    }
+    &:active {
+      color: $color-active;
+    }
+    @if($has-underlines) {
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: underline;  
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 $english: true;
 $script: 'latin';
 $direction: 'left';
+@include "_colours";
 @include(mixins/directions);
 @include(_sitestyles);
