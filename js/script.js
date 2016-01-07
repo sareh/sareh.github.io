@@ -5,10 +5,20 @@
   }
   var menuHamburgers = document.getElementsByClassName('menu-hamburger');
   var menuListItems = document.getElementsByClassName('menu-items');
-  menuHamburgers.on("click", function() {
-    toggleClass(this, 'menu-hamburger-open');
-    toggleClass(menuListItems, 'visible');
-  });
+  function toggleHamburgerMenu() {
+    $('.menu-hamburger').slideToggle();
+  }
+
+  menuHamburgers.on("click", toggleHamburgerMenu);
+
+  // function() {  
+  //   toggleClass(this, 'menu-hamburger-open');
+  //   toggleClass(menuListItems, 'visible');
+
+});
+
+
+
 
   //Adapted from jQuery's function
   function hasClass(selector) {

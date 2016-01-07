@@ -2,7 +2,21 @@
 <html lang={{ site.current_language }}>
   {% include head.html %}
   <body>
-    {% include header.html %}
+<!--     {% capture datalang %}site.data.{{site.current_language}}{% endcapture %}
+    {% include header.html lang=site.current_language datalang=site.data.datalang %} -->
+    
+    {% include header-fa.html %}
+
+
+    
+    {% if site.current_language == 'en' %}
+      <!-- {% include header-en.html %} -->
+    {% endif %}
+    {% if site.current_language == 'fa' %}
+      {% include header-fa.html %}
+    {% endif %}
+
+    {% include social-media-links.html %}
     <div class="page-content">
       <div class="wrapper">
         {{ content }}
