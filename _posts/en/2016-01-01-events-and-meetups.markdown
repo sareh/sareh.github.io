@@ -1,8 +1,10 @@
 ---
 layout: post
 title:  "Meetups and Events in 2015"
+synopsis: ""
 date:   2015-12-31 15:38:33 +0000
 categories: en general
+language: en
 ---
 
 I enjoy going to lots of different meetups - hearing about the projects people are working on, the tech they're using. 
