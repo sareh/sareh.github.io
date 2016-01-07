@@ -1,0 +1,26 @@
+---
+layout: page
+site.current_language: en
+title: "Blog"
+---
+<section class="posts">
+  <h2 class="section-title">Blog</h2>
+  <h3>Featured Posts</h3>
+  <h3>All Posts</h3>
+  {% for post in site.posts %}
+    {% if post.language == 'en' %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        {% if post.img %}
+          <div class="post-image-box">
+            <img class="post-image" src="{{ post.img }}">
+          </div>
+        {% endif %}
+        <p>{{ post.synopsis }}</p>
+      </li>
+    {% endif %}
+  {% endfor %}
+</section>

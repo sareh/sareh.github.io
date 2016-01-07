@@ -1,0 +1,20 @@
+---
+layout: page
+title: Projects
+language: en
+<!-- permalink: /en/projects/ -->
+---
+<p>Here are my latest projects.</p>
+<ul>
+  {% for project in site.pages %}
+    {% if (project.language == 'en' && project.project == 'true') %}
+      <li>
+      <p>{{ project.title }}</p>
+      <p>{{ project.tagline }}</p>
+      <p>{{ project.image }}</p>
+
+
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
