@@ -1,4 +1,4 @@
-@mixin menu-links($font-size, $letter-spacing, $color, $page-color) {
+@mixin menu-links($font-size, $letter-spacing, $color, $page-color, $border-thickness) {
   a{
     text-transform: uppercase;
     font-size: $font-size;
@@ -11,14 +11,14 @@
     &,
     &:visited {
       color: $color;
-      border: 0.2em solid $color;
+      border: $border-thickness solid $color;
     }
     &:hover,
     &:focus,
     &:active {
       color: $page-color;
       background-color: lighten($color, 20%);
-      border: 0.2em solid lighten($color, 20%);
+      border: $border-thickness solid lighten($color, 20%);
     }
     // @if($has-underlines) {
     //   &:hover,

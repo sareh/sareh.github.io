@@ -19,6 +19,7 @@ $blue900: #0D47A1;
 $black:   #000000;
 
 $text-color: #2F2F2F;
+$border-thickness: 0.2em;
 
 /* Fonts */
 $en-font-family: Arial, sans-serif;
@@ -115,7 +116,7 @@ body {
         height: $en-menu-height;
         li {
           display: inline;
-          @include menu-links($en-menu-font-size, $en-menu-letter-spacing, $primary-color, $page-color);
+          @include menu-links($en-menu-font-size, $en-menu-letter-spacing, $primary-color, $page-color, $border-thickness);
           // @include links($en-menu-font-size, $en-menu-letter-spacing, $blue50, $blue50, $blue500, $blue500);
           /*a {
             text-transform: uppercase;
@@ -263,7 +264,7 @@ body {
       margin: 2em auto;
       li {
         display: inline;
-        @include menu-links($en-font-size, $en-menu-letter-spacing, $primary-color, $page-color);
+        @include menu-links($en-font-size, $en-menu-letter-spacing, $primary-color, $page-color, $border-thickness);
         // @include links($en-font-size, 2px, $blue900, $blue900, $blue900, $blue900, true);
       }
 /*      li~li { 
