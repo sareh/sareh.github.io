@@ -1,0 +1,24 @@
+<header id="site-header">
+  <nav class="menu">
+    <ul class="menu-list">
+      {% for item in site.data.en.menu_items %}
+      <li class="menu-item"><a href="{{item.link}}">{{item.text}}</a></li>
+      {% endfor %}
+      <li class="menu-hamburger">
+        <a href=""><i class="fa fa-menu fa-fw"></i>{{site.data.en.menu}}</a>
+      </li>
+      <li class="menu-hamburger">
+        <button class="menu-toggle-button">
+          <div class="menu-button">
+            <img class="menu-img" src="/images/ic_menu_white_24dp_1x.png">
+          </div>{{site.data.en.menu}}</button>
+      </li>
+    </ul>
+  </nav>
+  <div class="title-background">
+    <div class="site-logo"><a href="/en"><img src="/images/sareh-3-blue900-web-optimised-100px.svg"></a></div>
+    <!-- {{ site.logo | prepend: site.baseurl }} -->
+    <div class="site-title"><a href="/en">{{ site.data.en.site_title }}</a></div>
+    <div class="site-tagline"><a href="/en">{{ site.data.en.site_subtitle }}</a></div>
+  </div>
+</header>
