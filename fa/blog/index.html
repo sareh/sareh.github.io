@@ -1,0 +1,49 @@
+---
+layout: page
+site.current_language: fa
+language: fa
+title: "وبلگ"
+---
+<section class="posts">
+  <h2 class="section-title">وبلگ</h2>
+  {% if site.data.featured-posts-fa %}
+    <h3>maghaleh haye entekhab shodeh</h3>
+    <ul>
+      {% for post in site.data.featured-posts-fa %}
+        {% if post.language == 'fa' %}
+          <li>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            <h2>
+              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </h2>
+            {% if post.img %}
+              <div class="post-image-box">
+                <img class="post-image" src="{{ post.img }}">
+              </div>
+            {% endif %}
+            <p>{{ post.synopsis }}</p>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+  <h3>maghaleh ha</h3>
+  <ul>
+    {% for post in site.posts %}
+      {% if post.language == 'en' %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+          {% if post.img %}
+            <div class="post-image-box">
+              <img class="post-image" src="{{ post.img }}">
+            </div>
+          {% endif %}
+          <p>{{ post.synopsis }}</p>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</section>
