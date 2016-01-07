@@ -4,17 +4,20 @@ title: Projects
 language: en
 <!-- permalink: /en/projects/ -->
 ---
-<p>Here are my latest projects.</p>
-<ul>
-  {% for project in site.pages %}
-    {% if (project.language == 'en' && project.project == 'true') %}
-      <li>
-      <p>{{ project.title }}</p>
-      <p>{{ project.tagline }}</p>
-      <p>{{ project.image }}</p>
+<section class="projects">
+  <p class="summary">Here are my latest projects.</p>
 
 
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
+  <ul class="projects-list">
+    {% for project in site.pages %}
+      {% if (project.language == 'en' && project.project == 'true') %}
+        <li class="project-item">
+          <p>{{ project.title }}</p>
+          <p>{{ project.tagline }}</p>
+          <p><img src="{{ project.image }}" class="project-img"></p>
+          <p>{{ project.content }}</p>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>  
+</section>
