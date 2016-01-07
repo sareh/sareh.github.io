@@ -2,56 +2,8 @@
 # Front matter comment to ensure Jekyll properly reads file.
 ---
 
-/* Normalise file */
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
+/* Reset file */
+@import "reset";
 
 /* Colours */
 $blue50:  #E3F2FD;
@@ -79,11 +31,14 @@ $en-menu-letter-spacing: 1px;
 
 $en-site-title-font-size: 3.5em;
 $en-site-title-font-weight: bold;
-
 $en-site-tagline-font-size: 2em;
+
+$en-section-heading-font-size: 1.5em;
 
 /* Colours for sections */
 $pale-grey: #FAFAFA;
+$page-color: $pale-grey;
+$primary-color: $blue900;
 $site-title-colour: $blue900;
 $site-tagline-colour: $blue900;
 $title-background-color: #020100;
@@ -111,17 +66,23 @@ $title-background-image: url("/images/7008036-night-london-city-wallpaper.jpg");
 // @import "foundation-icons";
 //My Mixins:
 @import "mixins/links";
+@import "mixins/menu-links";
 
 body {
-  background-color: $pale-grey;
+  background-color: $page-color;
   color:            $text-color;
   font-family:      $en-font-family;
   font-size:        100%;
+  @include links($en-font-size, 0, $primary-color, $primary-color, $primary-color, $primary-color, true);
   header#site-header {
     height: 400px;
     position: relative;
     overflow: hidden;
+    text-align: center;
+    display: block;
+    @include links($en-font-size, 0, $primary-color, $primary-color, $primary-color, $primary-color, false);
     div#site-header-image {
+      display: block;
       position: absolute;
       top: 0;
       left: 0;
@@ -131,15 +92,30 @@ body {
       transform: translate3d(0px, 0px, 0px);
       opacity: 1;
       background: $title-background-color $title-background-image no-repeat center;
-  
     }
     
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+      .menu {
+        width:100%;
+      }
+      .menu-list {
+      }
+      .menu-item {
+        width:100%;
+        display: none;
+      }
+      .menu-hamburger {
+        display: block;
+      }
+    }
+
     nav {
       .menu-list {
         list-style: none;
         height: $en-menu-height;
         li {
           display: inline;
+          @include menu-links($en-menu-font-size, $en-menu-letter-spacing, $primary-color, $page-color);
           // @include links($en-menu-font-size, $en-menu-letter-spacing, $blue50, $blue50, $blue500, $blue500);
           /*a {
             text-transform: uppercase;
@@ -161,13 +137,26 @@ body {
             color: $blue50;
             font-size: $en-menu-font-size;  
           }
+        }
+        li.menu-hamburger {
+          button.menu-toggle-button {
+            background: none !important;
+            border: none;
+            padding: 0 !important;
+            font: inherit;
+            cursor: pointer;
+            div.menu-button {
+              img.menu-img {
+              }
+            }
+          }
         } 
       }
     }
     div.title-background {
       text-align: center;
       div.site-logo {
-        margin: 0 auto;
+        margin: 3em auto 2em;
       }
       div.site-title {
         text-transform: uppercase;
@@ -186,10 +175,10 @@ body {
   }
 
   .social-media-icons {
-    color: $blue900;
     text-align: center;
     li {
       display: inline;
+      @include links($en-font-size, 2px, $primary-color, $primary-color, $primary-color, $primary-color, false); 
     }
   }
 
@@ -198,10 +187,37 @@ body {
     margin: 2em auto;
     h2.section-title {
       text-align: center;
-      font-size: 2em;
+      font-size: $en-section-heading-font-size;
+      text-transform: uppercase;
+      letter-spacing: $en-menu-letter-spacing;
+      font-weight: bold;
+      margin: 0.2em 0.1em;
+      padding: 0.2em 0.4em;
+      color: $primary-color;
+      border: 0.2em solid $primary-color
+      // text-decoration: none;
+      // line-height: 3;
+    }
+    p.summary {
+      font-size: 1.3em;
+      line-height: 2em;
+      margin: 0 3em;
+    }
+    div.img-full-width {
+      text-align: center;
+      img {
+        margin: 2em auto;
+      }
     }
   }
 
+  section.blurb {
+    max-width: 480px;
+    p {
+      font-size: 1.5em;
+      text-align: center;
+    }
+  }
   section.projects {
 
   }
@@ -212,7 +228,7 @@ body {
       list-style: none;
       li {
         display: inline;
-        @include links($en-font-size, 2px, $blue900, $blue900, $blue900, $blue900);
+        @include links($en-font-size, 2px, $primary-color, $primary-color, $primary-color, $primary-color, true);
         .icon-github {
           fill: red;
         }
@@ -234,9 +250,11 @@ body {
     ul.menu-list {
       text-align: center;
       list-style: none;
+      margin: 2em auto;
       li {
         display: inline;
-        @include links($en-font-size, 2px, $blue900, $blue900, $blue900, $blue900);
+        @include menu-links($en-font-size, $en-menu-letter-spacing, $primary-color, $page-color);
+        // @include links($en-font-size, 2px, $blue900, $blue900, $blue900, $blue900, true);
       }
 /*      li~li { 
         border-left: 1px solid $blue900;
@@ -259,6 +277,9 @@ body {
     
     p#footer-copyright {
       text-align: center;
+      margin: 2em auto;
+      color: $primary-color;
+      font-weight: bold;
     }
 
   }

@@ -1,17 +1,33 @@
 ---
-layout: default
+layout: default-en
 ---
-<h2>English Home Page</h2>
-<div class="home">
+<section class="blurb">
+  <p class="summary">I'm a Junior Full Stack Web Developer, with an interest in ....</p>
+  <p class="summary"> Photography, going to meetups, getting involved with diversity in tech initiatives.</p>
+  <p>You can often find me on <a href="{{https://www.twitter.com/Sareh88}}">Twitter</a>.</p>
+</section>
+<section class="skills">
+  <h2 class="section-title">Skills</h2>
+  <p class="summary">Here's some of the tech I use for my projects. To see how and why I've used them, have a look at my <a href="/en/projects">projects page</a>.</p>
+  <div class="img-full-width"><img src="/images/sarehsskills.png"></div>
+</section>
+
+<section>
+  
+</section>
+<!-- <h2>English Home Page</h2> -->
+<!-- <div class="home">
   <h1 class="page-heading">Posts</h1>
   <ul class="post-list">
     {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
+      {% if post.language == 'en' %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+        </li>
+      {% endif %}
     {% endfor %}
   </ul>
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
@@ -24,4 +40,4 @@ layout: default
   <p>{{ project.title }}</p>
   </li>
   {% endfor %}
-</ul>
+</ul> -->
