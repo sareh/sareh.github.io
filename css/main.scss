@@ -226,6 +226,7 @@ body {
     }
     ul.projects-list {
       li.project-item {
+        border: $border-thickness solid $primary-color;
         .project-img {
 
         }
