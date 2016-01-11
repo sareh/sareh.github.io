@@ -1,6 +1,44 @@
 ---
 layout: default-en
 ---
+<section class="blurb">
+  <p class="summary">I have a background in maths and physics, an interest in emerging tech and a lot of enthusiasm for learning.</p>
+  <!-- <p class="summary"> Photography, going to meetups, getting involved with diversity in tech initiatives.</p>
+  <p>You can often find me on <a href="{{https://www.twitter.com/Sareh88}}">Twitter</a>.</p> -->
+</section>
+<section class="skills">
+  <h2 class="section-title">Skills</h2>
+  <p class="summary">Here's some of the tech I use for my projects. To see how and why I've used them, have a look at my <a href="/en/projects">projects page</a>.</p>
+  <div class="img-full-width"><img src="/images/sarehsskills.png" alt="Logos of HTML5 JavaScript Sass CSS3 Bower Grunt Gulp Github Trello Bootstrap Foundation AngularJS NodeJS MongoDB Express Heroku Amazon Web Services Ruby Sinatra Rails PostgreSQL"></div>
+</section>
+
+<section class="interests">
+  <h2 class="section-title">Recent Interests</h2>
+  <p class="summary">Here are some of the meetups, events and conferences I've attended over the past few months.</p>
+  <ul class="interests-list">
+  {% for interest in site.data.recent-interests-en %}
+      <li class="interest-item">
+        <p class="interest-img-box vert-align-helper"><img src="{{ interest.image }}" alt="{{ interest.alt }}" class="interest-img"></p>
+        <p class="interest-name">{{ interest.name }}</p>
+        <p>{{ interest.content }}</p>
+      </li>
+  {% endfor %}
+  </ul>
+</section>
+
+<section class="interests">
+  <h2 class="section-title">Upcoming</h2>
+  <p class="summary">Here's a mix of projects, conferences and tech community groups that I'll be busy with in the next year or so. </p>
+  <ul class="interests-list">
+  {% for interest in site.data.upcoming-projects-en %}
+      <li class="interest-item">
+        <p class="interest-img-box vert-align-helper"><img src="{{ interest.image }}" alt="{{ interest.alt }}" class="interest-img"></p>
+        <p class="interest-name">{{ interest.name }}</p>
+        <p>{{ interest.content }}</p>
+      </li>
+  {% endfor %}
+  </ul>
+</section>
 <!-- <section>
   <h2>Projects</h2>
   <div class="projects-box">
@@ -27,7 +65,7 @@ layout: default-en
   </ul>
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 </div> -->
-<section class="about">
+<!-- <section class="about">
   <h2 class="section-title">About Me</h2>
   <p class=""></p>
 </section>
@@ -54,9 +92,9 @@ layout: default-en
 <section class="posts">
   <h2 class="section-title">Blog</h2>
   <h3>Latest Posts</h3>
-</section>
+</section> -->
 
-<section class="contact">
+<!-- <section class="contact">
   <h2 class="section-title">Contact</h2>
   {% include social-media-links.html %}
-</section>
+</section> -->

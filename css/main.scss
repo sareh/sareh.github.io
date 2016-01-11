@@ -194,7 +194,8 @@ body {
       letter-spacing: $en-menu-letter-spacing;
       font-weight: bold;
       margin: 0.2em 0.1em;
-      padding: 0.2em 0.4em;
+      // padding: 0.2em 0.4em;
+      padding: 0.6em 0.4em;
       color: $primary-color;
       border: 0.2em solid $primary-color
       // text-decoration: none;
@@ -203,7 +204,11 @@ body {
     p.summary {
       font-size: 1.3em;
       line-height: 2em;
-      margin: 0 3em;
+      margin: 2em 3em;
+      color: $primary-color;
+      // font-style: italic;
+      font-weight: bold;
+      text-align: center;
     }
     div.img-full-width {
       text-align: center;
@@ -233,6 +238,43 @@ body {
       }
     }
   }
+
+  section.interests {
+    p.summary {
+    }
+    ul.interests-list {
+      margin: 0;
+      text-align: center;
+      li.interest-item {
+        display: inline-block;
+        margin: 0;
+        // border: $border-thickness solid $primary-color;
+        p.interest-img-box {
+          /*height: 150px;*/
+          width: 150px;
+          white-space: nowrap;
+          .interest-img {
+            max-width: 100%;
+            height: auto;
+            vertical-align: middle;
+          }
+        }
+        .vert-align-helper {
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle;
+        }
+        p.interest-name {
+          line-height: 2em;
+          font-weight: bold;
+          text-align: center;
+          width: 150px;
+        }
+      }
+    }
+  }
+
+
 
   section.contact {
     text-align: center;
