@@ -95,7 +95,8 @@ body {
       background: $title-background-color $title-background-image no-repeat center;
     }
     
-    @media only screen and (min-width: 320px) and (max-width: 768px) {
+    // @media only screen and (min-width: 320px) and (max-width: 768px) {
+    @media only screen and (max-width: 780px) {
       .menu {
         width:100%;
       }
@@ -106,7 +107,7 @@ body {
         display: none;
       }
       .menu-hamburger {
-        display: block;
+        display: inline-block;
       }
     }
 
@@ -155,25 +156,28 @@ body {
         } 
       }
     }
-    div.title-background {
-      text-align: center;
-      div.site-logo {
-        margin: 3em auto 2em;
-      }
-      div.site-title {
-        text-transform: uppercase;
-        /*font-variant: small-caps;*/
-        font-size: $en-site-title-font-size;
-        font-weight: $en-site-title-font-weight;
-        color: $site-title-colour;
-      }
-      div.site-tagline {
-        text-transform: uppercase;
-        /*font-variant: small-caps;*/
-        font-size: $en-site-tagline-font-size;
-        color: $site-tagline-colour;
-      }  
+    // div.title-background {
+    //   text-align: center; 
+    // }
+    div.site-logo {
+      margin: 3em auto 2em;
     }
+
+    div.site-title {
+      text-transform: uppercase;
+      /*font-variant: small-caps;*/
+      font-size: $en-site-title-font-size;
+      font-weight: $en-site-title-font-weight;
+      color: $site-title-colour;
+    }
+
+    div.site-tagline {
+      text-transform: uppercase;
+      /*font-variant: small-caps;*/
+      font-size: $en-site-tagline-font-size;
+      color: $site-tagline-colour;
+    }
+      
   }
 
   .social-media-icons {
@@ -219,7 +223,7 @@ body {
   }
 
   section.blurb {
-    max-width: 480px;
+    max-width: 600px;
     p {
       font-size: 1.5em;
       text-align: center;
